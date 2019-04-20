@@ -3,9 +3,16 @@ import "./Button.css";
 
 interface Props {
   onClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
+  className?: string;
+  keyRef?: any;
 }
 
-export const Button: React.FC<Props> = (props) => {
-  const {onClick, children} = props; 
-  return <button className="Button" onClick={onClick} >{children}</button>;
-}
+export const Button: React.FC<Props> = React.memo((props) => {
+  const {children, className, onClick, keyRef} = props; 
+  return <button 
+    onClick={onClick} 
+    className={`Button ${className ? className : ""}`} 
+    ref={keyRef}>
+      {children}
+  </button>;
+});

@@ -1,24 +1,41 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Button } from "./components/Button";
+import { Numpad } from "./components/Numpad";
+import { Display } from "./components/Display";
 
-class App extends Component {
+interface State {
+  numpadValue: string;
+}
+
+class App extends Component<any, State> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      numpadValue: ""
+    }
+    this.keyPress = this.keyPress.bind(this);
+  }
+
+  private keyPress(keyValue: string) {
+    const { numpadValue } = this.state;
+    if (keyValue === "Del") {
+      // Handle delete
+      if (numpadValue.length >= 1) {
+        this.setState({ numpadValue: numpadValue.substring(0, numpadValue.length - 1) });
+      }
+    } else {
+      this.setState({ numpadValue: numpadValue + keyValue });
+    }
+  };
+
   public render() {
+    const { numpadValue } = this.state;
+
     return <div className="container">
-      <div className="gridContainer">
-        <Button onClick={(e) => console.log(e)}>1</Button>
-        <Button onClick={(e) => console.log(e)}>2</Button>
-        <Button onClick={(e) => console.log(e)}>3</Button>
-        <Button onClick={(e) => console.log(e)}>4</Button>
-        <Button onClick={(e) => console.log(e)}>5</Button>
-        <Button onClick={(e) => console.log(e)}>6</Button>
-        <Button onClick={(e) => console.log(e)}>7</Button>
-        <Button onClick={(e) => console.log(e)}>8</Button>
-        <Button onClick={(e) => console.log(e)}>9</Button>
-        <Button onClick={(e) => console.log(e)}>Del</Button>
-        <Button onClick={(e) => console.log(e)}>0</Button>
-      </div>
+      <Display value={numpadValue} />
+      <Numpad keyPress={this.keyPress} />
     </div>;
   }
 }
