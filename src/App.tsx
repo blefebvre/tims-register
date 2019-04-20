@@ -16,6 +16,8 @@ class App extends Component {
         <Button onClick={(e) => console.log(e)}>7</Button>
         <Button onClick={(e) => console.log(e)}>8</Button>
         <Button onClick={(e) => console.log(e)}>9</Button>
+        <Button onClick={(e) => console.log(e)}>Del</Button>
+        <Button onClick={(e) => console.log(e)}>0</Button>
       </div>
     </div>;
   }
