@@ -21,3 +21,15 @@
 .food-items {
   align-self: flex-end;
 }
+
+.orders {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 340px 340px;
+  grid-gap: 10px;
+}
+
+.orders .orderDetails {
+  border: 1px solid #333;
+  padding: 5px;
+}

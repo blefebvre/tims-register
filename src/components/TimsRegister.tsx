@@ -6,6 +6,7 @@ import { ExtraButtons } from "./ExtraButtons";
 
 import "./TimsRegister.css";
 import { FoodItem } from "../models/FoodItem";
+import { OrderDetails } from "./OrderDetails";
 
 interface State {
   numpadString: string;
@@ -63,6 +64,9 @@ export const TimsRegister: React.FC<any> = (props) => {
 
   return <>
     <div className="screen">
+      <div className="orders">
+        <OrderDetails />
+      </div>
       <div className="buttons">
         <div className="food-items">
           <FoodItems itemSelected={itemSelected} />
