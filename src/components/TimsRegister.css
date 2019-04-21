@@ -1,0 +1,12 @@
+.screen {
+  display: flex;
+  flex-direction: row;
+}
+
+.screen > div {
+  padding: 5px;
+}
+
+.food-items {
+  align-self: flex-end;
+}

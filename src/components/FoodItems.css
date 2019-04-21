@@ -1,0 +1,9 @@
+.FoodItems {
+  display: grid;
+  grid-template-columns: 90px 90px 90px 90px;
+  grid-gap: 10px;
+}
+
+.FoodItems .two-col {
+  grid-column-end: span 2;
+}

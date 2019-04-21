@@ -1,34 +1,40 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Numpad } from "./Numpad";
 import { Display } from "./Display";
+import { FoodItems } from "./FoodItems";
+
+import "./TimsRegister.css";
 
 interface State {
   numpadString: string;
   numpadValue: number;
 }
 
-export class TimsRegister extends Component<any, State> {
+export const TimsRegister: React.FC<any> = (props) => {
 
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      numpadString: "",
-      numpadValue: 0.00
+  const [numpadValue, setNumpadValue] = useState(0);
+  const [numpadString, setNumpadString] = useState("");
+
+  const getFloatFromNumpadString = (valueStr: string): number => {
+    let valueWithDecimalPlace = valueStr;
+    // Put a decimal place at the right spot
+    switch (valueStr.length) {
+      case 0:
+        return 0;
+      case 1:
+        valueWithDecimalPlace = ".0" + valueStr;
+        break;
+      default:
+        valueWithDecimalPlace = valueStr.slice(0, valueStr.length - 2) + "." + valueStr.slice(valueStr.length - 2);
     }
-    this.keyPress = this.keyPress.bind(this);
+    try {
+      return parseFloat(valueWithDecimalPlace);
+    } catch(e) {
+      return 0;
+    }
   }
 
-  public render() {
-    const { numpadValue } = this.state;
-
-    return <>
-      <Display value={numpadValue} />
-      <Numpad keyPress={this.keyPress} />
-    </>;
-  }
-
-  private keyPress(keyValue: string) {
-    const { numpadString } = this.state;
+  const keyPress = (keyValue: string) => {
     let updatedNumpadString: string = numpadString;
 
     if (keyValue === "Del") {
@@ -40,29 +46,19 @@ export class TimsRegister extends Component<any, State> {
       updatedNumpadString = updatedNumpadString + keyValue;
     }
     // Parse the string into a float
-    this.setState({ 
-      numpadString: updatedNumpadString,
-      numpadValue: this.getFloatFromNumpadString(updatedNumpadString) })
+    setNumpadString(updatedNumpadString);
+    setNumpadValue(getFloatFromNumpadString(updatedNumpadString));
   };
 
-  private getFloatFromNumpadString(valueStr: string): number {
-    let valueWithDecimalPlace = valueStr;
-    // Put a decimal place at the right spot
-    switch (valueStr.length) {
-      case 0:
-        return 0;
-      case 1:
-        valueWithDecimalPlace = ".0" + valueStr;
-        break;
-      //case 2:
-      //  valueWithDecimalPlace = "." + valueStr;
-      default:
-        valueWithDecimalPlace = valueStr.slice(0, valueStr.length - 2) + "." + valueStr.slice(valueStr.length - 2);
-    }
-    try {
-      return parseFloat(valueWithDecimalPlace);
-    } catch(e) {
-      return 0;
-    }
-  }
-}
+  return <>
+    <Display value={numpadValue} />
+    <div className="screen">
+      <div className="food-items">
+        <FoodItems />
+      </div>
+      <div className="numpad">
+        <Numpad keyPress={keyPress} />
+      </div>
+    </div>
+  </>;
+};

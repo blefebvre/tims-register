@@ -24,5 +24,5 @@ export function useKeyboardEvent(
     return () => {
       window.removeEventListener("keydown", handler);
     };
-  }, []);
+  });
 }
