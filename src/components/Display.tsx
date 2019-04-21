@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  value: string;
+  value: number;
 }
 
 export const Display: React.FC<Props> = ({value}) => {

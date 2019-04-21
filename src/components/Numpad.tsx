@@ -22,7 +22,7 @@ export const Numpad: React.FC<Props> = React.memo(function(props) {
   keyRefs.set("0", React.createRef()); */
 
   // Add keypress listeners
-  const useKeyEvent = useKeyboardEvent([...regularWidthKeys, ...doubleWidthKeys], (key) => {
+  useKeyboardEvent([...regularWidthKeys, ...doubleWidthKeys], (key) => {
     // Click the key
     props.keyPress(key);
   });
