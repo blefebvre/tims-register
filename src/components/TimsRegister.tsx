@@ -6,14 +6,15 @@ import { ExtraButtons } from "./ExtraButtons";
 
 import "./TimsRegister.css";
 import { FoodItem } from "../models/FoodItem";
-import { OrderDetails } from "./OrderDetails";
+import OrderDetails from "../containers/OrderDetails";
+import { TimsRegisterContainerProps } from "../containers/TimsRegister";
 
 interface State {
   numpadString: string;
   numpadValue: number;
 }
 
-export const TimsRegister: React.FC<any> = (props) => {
+export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
 
   const [numpadValue, setNumpadValue] = useState(0);
   const [numpadString, setNumpadString] = useState("");
@@ -55,6 +56,7 @@ export const TimsRegister: React.FC<any> = (props) => {
 
   const itemSelected = (item: FoodItem) => {
     console.log("Item selected!", item);
+    props.addItemToCurrentOrder(item);
   };
 
   const voidLastItem = () => {

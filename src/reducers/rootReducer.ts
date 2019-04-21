@@ -1,6 +1,11 @@
 import { Reducer, combineReducers } from "redux";
-import { order } from "./order";
-import { history } from "./history";
+import { order, Order } from "./order";
+import { history, OrderHistory } from "./history";
+
+export interface AppState {
+  order: Order;
+  history: OrderHistory;
+}
 
 export const rootReducer: Reducer = combineReducers({
   order,

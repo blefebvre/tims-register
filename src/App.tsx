@@ -4,7 +4,7 @@ import { createStore, Store } from "redux";
 import { rootReducer } from "./reducers/rootReducer";
 import logo from "./logo.svg";
 import "./App.css";
-import { TimsRegister } from "./components/TimsRegister";
+import TimsRegister from "./containers/TimsRegister";
 
 class App extends Component {
 
