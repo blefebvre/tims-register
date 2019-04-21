@@ -4,7 +4,32 @@ import { Button } from "./Button";
 
 import "./FoodItems.css";
 
-export const FoodItems: React.FC = (props) => {
+interface Props {
+  itemSelected(item: FoodItem): void;
+}
+
+export const FoodItems: React.FC<Props> = (props) => {
+  const { itemSelected } = props;
+
+  const coffeeAddons: FoodItem[] = [
+    {
+      title: "4x4",
+      price: 0
+    },
+    {
+      title: "Triple Triple",
+      price: 0
+    },
+    {
+      title: "Double Double",
+      price: 0
+    },
+    {
+      title: "Regular",
+      price: 0
+    }
+  ]
+
   const darkRoast: FoodItem[] = [
     {
       title: "SM Dark Roast",
@@ -43,16 +68,17 @@ export const FoodItems: React.FC = (props) => {
     }
   ]
 
+  const renderButton = (item: FoodItem, className: string) => {
+    return <Button key={item.title} 
+      onClick={() => itemSelected(item)}
+      className={className}>
+        {item.title}
+    </Button>;
+  }
+
   return <div className="FoodItems">
-      {darkRoast.map((item) => <Button key={item.title} 
-        onClick={() => console.log("coff")}
-        className="dark-roast">
-          {item.title}
-      </Button>)}
-      {originalBlend.map((item) => <Button key={item.title} 
-        onClick={() => console.log("coff blend")}
-        className="original-blend">
-          {item.title}
-      </Button>)}
+    {coffeeAddons.map((item) => renderButton(item, "coffee-addons"))}
+    {darkRoast.map((item) => renderButton(item, "dark-roast"))}
+    {originalBlend.map((item) => renderButton(item, "original-blend"))}
   </div>;
 };

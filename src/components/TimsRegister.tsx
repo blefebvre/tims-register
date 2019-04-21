@@ -4,6 +4,7 @@ import { Display } from "./Display";
 import { FoodItems } from "./FoodItems";
 
 import "./TimsRegister.css";
+import { FoodItem } from "../models/FoodItem";
 
 interface State {
   numpadString: string;
@@ -50,14 +51,27 @@ export const TimsRegister: React.FC<any> = (props) => {
     setNumpadValue(getFloatFromNumpadString(updatedNumpadString));
   };
 
+  const itemSelected = (item: FoodItem) => {
+    console.log("Item selected!", item);
+  };
+
+  const voidLastItem = () => {
+    // TODO
+    console.log("Void last item");
+  };
+
   return <>
-    <Display value={numpadValue} />
     <div className="screen">
-      <div className="food-items">
-        <FoodItems />
+      <div className="buttons">
+        <div className="food-items">
+          <FoodItems itemSelected={itemSelected} />
+        </div>
+        <div className="numpad">
+          <Numpad keyPress={keyPress} itemVoid={() => voidLastItem()}/>
+        </div>
       </div>
-      <div className="numpad">
-        <Numpad keyPress={keyPress} />
+      <div className="totals">
+        <Display value={numpadValue} />
       </div>
     </div>
   </>;
