@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.3661487c.chunk.css",
-  "main.js": "/static/js/main.c6358e2f.chunk.js",
-  "main.js.map": "/static/js/main.c6358e2f.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.8a586615.chunk.js": "/static/js/2.8a586615.chunk.js",
-  "static/js/2.8a586615.chunk.js.map": "/static/js/2.8a586615.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.a38bf18e6a66105153c703b7ebee0a81.js": "/precache-manifest.a38bf18e6a66105153c703b7ebee0a81.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.3661487c.chunk.css.map": "/static/css/main.3661487c.chunk.css.map"
+  "main.css": "/tims-register/static/css/main.3661487c.chunk.css",
+  "main.js": "/tims-register/static/js/main.2efed5eb.chunk.js",
+  "main.js.map": "/tims-register/static/js/main.2efed5eb.chunk.js.map",
+  "runtime~main.js": "/tims-register/static/js/runtime~main.b23d1619.js",
+  "runtime~main.js.map": "/tims-register/static/js/runtime~main.b23d1619.js.map",
+  "static/js/2.8a586615.chunk.js": "/tims-register/static/js/2.8a586615.chunk.js",
+  "static/js/2.8a586615.chunk.js.map": "/tims-register/static/js/2.8a586615.chunk.js.map",
+  "index.html": "/tims-register/index.html",
+  "precache-manifest.d2844916461dd43ac0a1aefeafcfc3b8.js": "/tims-register/precache-manifest.d2844916461dd43ac0a1aefeafcfc3b8.js",
+  "service-worker.js": "/tims-register/service-worker.js",
+  "static/css/main.3661487c.chunk.css.map": "/tims-register/static/css/main.3661487c.chunk.css.map"
 }
