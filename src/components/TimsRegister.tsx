@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import { Numpad } from "./Numpad";
 import { Display } from "./Display";
 import { FoodItems } from "./FoodItems";
+import { ExtraButtons } from "./ExtraButtons";
 
 import "./TimsRegister.css";
 import { FoodItem } from "../models/FoodItem";
@@ -65,9 +66,10 @@ export const TimsRegister: React.FC<any> = (props) => {
       <div className="buttons">
         <div className="food-items">
           <FoodItems itemSelected={itemSelected} />
+          <ExtraButtons itemVoid={() => voidLastItem()} />
         </div>
         <div className="numpad">
-          <Numpad keyPress={keyPress} itemVoid={() => voidLastItem()}/>
+          <Numpad keyPress={keyPress} />
         </div>
       </div>
       <div className="totals">

@@ -1,9 +1,14 @@
-.FoodItems {
+.FoodItems,
+.ExtraButtons {
   display: grid;
   grid-template-columns: 90px 90px 90px 90px;
   grid-gap: 10px;
 }
 
-.FoodItems .two-col {
+.ExtraButtons {
+  padding-top: 10px;
+}
+
+.two-col {
   grid-column-end: span 2;
 }

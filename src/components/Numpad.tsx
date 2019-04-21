@@ -6,7 +6,6 @@ import { useKeyboardEvent } from "../hooks/KeyboardEvent";
 
 interface Props {
   keyPress(keyValue: string): void;
-  itemVoid(): void;
 }
 
 export const Numpad: React.FC<Props> = (props) => {
@@ -34,21 +33,6 @@ export const Numpad: React.FC<Props> = (props) => {
   }
 
   return <div className="Numpad">
-    <Button
-      onClick={() => props.itemVoid()}
-      className="item-void">
-        Item Void
-    </Button>
-    <Button
-      onClick={() => console.log("Take-Out")}
-      className="take-out">
-        Take-Out
-    </Button>
-    <Button
-      onClick={() => console.log("Eat In")}
-      className="eat-in">
-        Eat In
-    </Button>
     {regularWidthKeys.map((keyValue: string) => getButton(keyValue))}
     {doubleWidthKeys.map((keyValue: string) => getButton(keyValue, "two-col"))}
   </div>;
