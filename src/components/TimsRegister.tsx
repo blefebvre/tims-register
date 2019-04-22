@@ -8,6 +8,7 @@ import "./TimsRegister.css";
 import { FoodItem } from "../models/FoodItem";
 import OrderDetails from "../containers/OrderDetails";
 import { TimsRegisterContainerProps } from "../containers/TimsRegister";
+import { Button } from "./Button";
 
 interface State {
   numpadString: string;
@@ -60,8 +61,7 @@ export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
   };
 
   const voidLastItem = () => {
-    // TODO
-    console.log("Void last item");
+    props.voidLastItem();
   };
 
   return <>
@@ -79,7 +79,18 @@ export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
         </div>
       </div>
       <div className="totals">
-        <Display value={numpadValue} />
+        <div id="total">
+          Total: {props.order.total}
+        </div>
+        <div id="change-due">
+          Change: {0.00}
+        </div> 
+        <div id="cash">
+          Cash: {numpadValue}
+        </div>
+        <div id="pay-now">
+          <Button onClick={() => console.log("pay now!")} className="pay-now-button" >Pay Now</Button>
+        </div>
       </div>
     </div>
   </>;

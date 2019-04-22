@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { addItemToCurrentOrder } from "../actions";
+import { addItemToCurrentOrder, voidLastItem } from "../actions";
 import { AppState } from "../reducers/rootReducer";
-import { Order } from "../reducers/order";
-import { OrderHistory } from "../reducers/history";
 import { TimsRegister } from "../components/TimsRegister";
 
 const mapStateToProps = (state: AppState) => ({
@@ -11,15 +9,17 @@ const mapStateToProps = (state: AppState) => ({
   history: state.history
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  addItemToCurrentOrder: bindActionCreators(addItemToCurrentOrder, dispatch)
-});
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      addItemToCurrentOrder,
+      voidLastItem
+    },
+    dispatch
+  );
 
-export interface TimsRegisterContainerProps {
-  order: Order;
-  history: OrderHistory;
-  addItemToCurrentOrder: typeof addItemToCurrentOrder;
-}
+export type TimsRegisterContainerProps = ReturnType<typeof mapStateToProps> &
+  ReturnType<typeof mapDispatchToProps>;
 
 export default connect(
   mapStateToProps,

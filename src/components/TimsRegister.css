@@ -29,7 +29,29 @@
   grid-gap: 10px;
 }
 
-.orders .orderDetails {
-  border: 1px solid #333;
+.orders .order-details {
+  border: 1px solid #ccc;
   padding: 5px;
+}
+
+.totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-now-button {
+  height: 40px;
+  width: 190px;
+}
+
+#total,
+#change-due,
+#cash {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  height: 38px;
+  width: 145px;
+  padding: 0 5px 0 5px;
 }
