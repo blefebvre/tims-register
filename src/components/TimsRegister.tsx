@@ -8,6 +8,7 @@ import { FoodItem } from "../models/FoodItem";
 import OrderDetails from "../containers/OrderDetails";
 import { TimsRegisterContainerProps } from "../containers/TimsRegister";
 import { Button } from "./Button";
+import { formatCurrency } from "../currency/util";
 
 export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
   const [numpadValue, setNumpadValue] = useState(0);
@@ -92,9 +93,11 @@ export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
           </div>
         </div>
         <div className="totals">
-          <div id="total">Total: {props.order.total}</div>
-          <div id="change-due">Change: {props.order.change}</div>
-          <div id="cash">Cash: {numpadValue}</div>
+          <div id="total">Total: {formatCurrency(props.order.total)}</div>
+          <div id="change-due">
+            Change: {formatCurrency(props.order.change)}
+          </div>
+          <div id="cash">Cash: {formatCurrency(numpadValue)}</div>
           <div id="pay-now">
             <Button
               onClick={() => {
