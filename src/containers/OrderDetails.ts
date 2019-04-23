@@ -4,7 +4,6 @@ import { AppState } from "../reducers/rootReducer";
 
 const mapStateToProps = (state: AppState) => ({
   order: state.order,
-  history: state.history
 });
 
 export type OrderDetailsContainerProps = ReturnType<typeof mapStateToProps>;

@@ -1,19 +1,25 @@
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { addItemToCurrentOrder, voidLastItem } from "../actions";
+import {
+  addItemToCurrentOrder,
+  voidLastItem,
+  processPayment,
+  completeOrder,
+} from "../actions";
 import { AppState } from "../reducers/rootReducer";
 import { TimsRegister } from "../components/TimsRegister";
 
 const mapStateToProps = (state: AppState) => ({
   order: state.order,
-  history: state.history
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       addItemToCurrentOrder,
-      voidLastItem
+      voidLastItem,
+      processPayment,
+      completeOrder,
     },
     dispatch
   );

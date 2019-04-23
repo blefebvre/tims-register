@@ -25,7 +25,7 @@
 .orders {
   padding: 5px;
   display: grid;
-  grid-template-columns: 340px 340px;
+  grid-template-columns: 223px 224px 223px;
   grid-gap: 10px;
 }
 
