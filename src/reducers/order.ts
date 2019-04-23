@@ -5,8 +5,7 @@ import {
   PROCESS_PAYMENT,
   COMPLETE_ORDER,
 } from "../constants/ActionTypes";
-import { OrderAction, PaymentAction, RegisterActionTypes } from "../actions";
-import { stat } from "fs";
+import { RegisterActionTypes } from "../actions";
 
 interface FoodOrder {
   items: FoodItem[];
@@ -40,20 +39,22 @@ export const order = (
   switch (action.type) {
     case ADD_ITEM:
       const updatedItems = [...state.items, action.payload];
+      const totalWithItemAdded = getTotalCostOfItems(updatedItems);
       return {
         items: updatedItems,
-        total: getTotalCostOfItems(updatedItems),
+        total: totalWithItemAdded,
         cash: state.cash,
-        change: state.change,
+        change: getChangeDue(totalWithItemAdded, state.cash),
         history: state.history,
       };
     case REMOVE_LAST_ITEM:
       const lastItemRemoved = state.items.slice(0, state.items.length - 1);
+      const totalWithItemRemoved = getTotalCostOfItems(lastItemRemoved);
       return {
         items: lastItemRemoved,
-        total: getTotalCostOfItems(lastItemRemoved),
+        total: totalWithItemRemoved,
         cash: state.cash,
-        change: state.change,
+        change: getChangeDue(totalWithItemRemoved, state.cash),
         history: state.history,
       };
     case PROCESS_PAYMENT:

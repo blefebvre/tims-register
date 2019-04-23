@@ -21,19 +21,26 @@ export const Numpad: React.FC<Props> = (props) => {
 
   const keyClicked = (keyValue: string) => {
     props.keyPress(keyValue);
-  }
+  };
 
   const getButton = (text: string, className?: string) => {
-    return <Button 
-      key={text} 
-      onClick={(_) => keyClicked(text)}
-      className={className ? className : ""}>
+    return (
+      <Button
+        key={text}
+        onClick={(_) => keyClicked(text)}
+        className={className ? className : ""}
+      >
         {text}
-    </Button>
-  }
+      </Button>
+    );
+  };
 
-  return <div className="Numpad">
-    {regularWidthKeys.map((keyValue: string) => getButton(keyValue))}
-    {doubleWidthKeys.map((keyValue: string) => getButton(keyValue, "two-col"))}
-  </div>;
+  return (
+    <div className="Numpad">
+      {regularWidthKeys.map((keyValue: string) => getButton(keyValue))}
+      {doubleWidthKeys.map((keyValue: string) =>
+        getButton(keyValue, "two-col")
+      )}
+    </div>
+  );
 };

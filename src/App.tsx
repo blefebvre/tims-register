@@ -7,20 +7,21 @@ import "./App.css";
 import TimsRegister from "./containers/TimsRegister";
 
 class App extends Component {
-
   private store: Store;
 
   constructor(props: any) {
     super(props);
-    this.store = createStore(rootReducer)
+    this.store = createStore(rootReducer);
   }
 
   public render() {
-    return <div className="container">
-      <Provider store={this.store}>
-        <TimsRegister />
-      </Provider>
-    </div>;
+    return (
+      <div className="container">
+        <Provider store={this.store}>
+          <TimsRegister />
+        </Provider>
+      </div>
+    );
   }
 }
 

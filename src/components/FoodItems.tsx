@@ -14,71 +14,77 @@ export const FoodItems: React.FC<Props> = (props) => {
   const coffeeAddons: FoodItem[] = [
     {
       title: "4x4",
-      price: 0
+      price: 0,
     },
     {
       title: "Triple Triple",
-      price: 0
+      price: 0,
     },
     {
       title: "Double Double",
-      price: 0
+      price: 0,
     },
     {
       title: "Regular",
-      price: 0
-    }
-  ]
+      price: 0,
+    },
+  ];
 
   const darkRoast: FoodItem[] = [
     {
       title: "SM Dark Roast",
-      price: 1.05
+      price: 1.05,
     },
     {
       title: "MD Dark Roast",
-      price: 1.17
+      price: 1.17,
     },
     {
       title: "LG Dark Roast",
-      price: 1.31
+      price: 1.31,
     },
     {
       title: "XL Dark Roast",
-      price: 1.49
-    }
+      price: 1.49,
+    },
   ];
 
   const originalBlend: FoodItem[] = [
     {
       title: "SM Orig Blend",
-      price: 1.05
+      price: 1.05,
     },
     {
       title: "MD Orig Blend",
-      price: 1.17
+      price: 1.17,
     },
     {
       title: "LG Orig Blend",
-      price: 1.31
+      price: 1.31,
     },
     {
       title: "XL Orig Blend",
-      price: 1.49
-    }
-  ]
+      price: 1.49,
+    },
+  ];
 
   const renderButton = (item: FoodItem, className: string) => {
-    return <Button key={item.title} 
-      onClick={() => itemSelected(item)}
-      className={className}>
+    return (
+      <Button
+        key={item.title}
+        onClick={() => itemSelected(item)}
+        className={className}
+      >
         {item.title}
-    </Button>;
-  }
+      </Button>
+    );
+  };
 
-  return <div className="FoodItems">
-    {coffeeAddons.map((item) => renderButton(item, "coffee-addons"))}
-    {darkRoast.map((item) => renderButton(item, "dark-roast"))}
-    {originalBlend.map((item) => renderButton(item, "original-blend"))}
-  </div>;
+  return (
+    <div className="FoodItems">
+      {coffeeAddons.map((item) => renderButton(item, "coffee-addons"))}
+      {darkRoast.map((item) => renderButton(item, "dark-roast"))}
+      {originalBlend.map((item) => renderButton(item, "original-blend"))}
+    </div>
+  );
 };

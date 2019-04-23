@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
 import { Numpad } from "./Numpad";
-import { Display } from "./Display";
 import { FoodItems } from "./FoodItems";
 import { ExtraButtons } from "./ExtraButtons";
 
