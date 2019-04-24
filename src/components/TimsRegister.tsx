@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Numpad } from "./Numpad";
 import { FoodItems } from "./FoodItems";
 import { ExtraButtons } from "./ExtraButtons";
