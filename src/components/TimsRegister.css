@@ -1,8 +1,3 @@
-.screen {
-  display: flex;
-  flex-direction: column;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;
@@ -16,10 +11,6 @@
 
 .buttons > div {
   padding: 5px;
-}
-
-.food-items {
-  align-self: flex-end;
 }
 
 .orders {
