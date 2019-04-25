@@ -6,6 +6,7 @@ import {
   COMPLETE_ORDER,
 } from "../constants/ActionTypes";
 import { RegisterActionTypes } from "../actions";
+import { getTotalCostOfItems, getChangeDue } from "../currency/calculator";
 
 interface FoodOrder {
   items: FoodItem[];
@@ -82,21 +83,3 @@ export const order = (
       return state;
   }
 };
-
-function getTotalCostOfItems(items: FoodItem[]): number {
-  return items.reduce((previousValue: number, item: FoodItem) => {
-    // TODO: Big.js
-    if (item.price) {
-      return previousValue + item.price;
-    } else {
-      return previousValue;
-    }
-  }, 0);
-}
-
-function getChangeDue(total: number, cash: number): string {
-  if (cash <= 0) {
-    return initialState.change;
-  }
-  return (cash - total).toString();
-}

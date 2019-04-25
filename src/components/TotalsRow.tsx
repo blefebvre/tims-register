@@ -14,7 +14,7 @@ export const TotalsRow: React.FC<Props> = ({ total, change, cash, payNow }) => {
   return (
     <div className="totals">
       <div id="total">Total: ${formatCurrency(total)}</div>
-      <div id="change-due">Change: ${formatCurrency(change)}</div>
+      <div id="change-due">Change: ${change}</div>
       <div id="cash">Cash: ${formatCurrency(cash)}</div>
       <div id="pay-now">
         <Button onClick={payNow} className="pay-now-button">
