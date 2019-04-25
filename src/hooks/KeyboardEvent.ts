@@ -14,7 +14,7 @@ export function useKeyboardEvent(
           callback(key);
         }
         // Special case for Del key (map to Backspace)
-        const deleteKey = "Del";
+        const deleteKey = "DEL";
         if (key === "Backspace" && keys.includes(deleteKey)) {
           callback(deleteKey);
         }

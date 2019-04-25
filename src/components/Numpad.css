@@ -7,3 +7,15 @@
 .Numpad .two-col {
   grid-column-end: span 2;
 }
+
+.Numpad .Button {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ddd;
+  background-color: #2810c1;
+}
+
+.Numpad .Button.DEL-key {
+  font-size: 20px;
+  font-weight: normal;
+}

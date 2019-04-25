@@ -12,3 +12,18 @@
 .two-col {
   grid-column-end: span 2;
 }
+
+.Button.coffee-addons {
+  background-color: #b8bac3;
+  color: #222;
+}
+
+.Button.dark-roast {
+  background-color: #501c68;
+  color: #eee;
+}
+
+.Button.original-blend {
+  background-color: #2c4f91;
+  color: #eee;
+}

@@ -10,7 +10,7 @@ interface Props {
 
 export const Numpad: React.FC<Props> = (props) => {
   // Render the keypad
-  const regularWidthKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Del"];
+  const regularWidthKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "DEL"];
   const doubleWidthKeys = ["0"];
 
   // Add keypress listeners
@@ -28,7 +28,7 @@ export const Numpad: React.FC<Props> = (props) => {
       <Button
         key={text}
         onClick={(_) => keyClicked(text)}
-        className={className ? className : ""}
+        className={className ? className : `${text}-key`}
       >
         {text}
       </Button>

@@ -1,0 +1,43 @@
+.totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Button.pay-now-button {
+  height: 40px;
+  width: 190px;
+  background-color: rgb(16, 123, 16);
+  color: #eee;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#total,
+#change-due,
+#cash {
+  display: flex;
+  align-items: center;
+  border: 1px solid #aaa;
+  height: 38px;
+  width: 145px;
+  padding: 0 5px 0 5px;
+}
+
+.totals #total {
+  background-color: rgb(206, 2, 2);
+  color: #eee;
+  font-weight: bold;
+  z-index: 20;
+}
+
+.totals #change-due {
+  background-color: rgb(16, 123, 16);
+  color: #eee;
+  z-index: 10;
+}
+
+.totals #cash {
+  background-color: #ddd;
+  color: #222;
+}

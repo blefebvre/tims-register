@@ -1,8 +1,18 @@
 .Button {
   height: 60px;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: white;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-color: rgb(216, 216, 216) rgb(58, 58, 58) rgb(58, 58, 58)
+    rgb(216, 216, 216);
   border-style: solid;
   border-width: 1px;
+  font-size: 18px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+.Button:active {
+  box-shadow: 0 0 rgba(0, 0, 0, 0.2);
 }
