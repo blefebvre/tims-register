@@ -1,5 +1,4 @@
 import { FoodItem } from "../models/FoodItem";
-import { Big } from "big.js";
 
 // Get the total value of all items
 export function getTotalCostOfItems(items: FoodItem[]): number {
