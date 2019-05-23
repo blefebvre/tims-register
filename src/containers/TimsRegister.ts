@@ -5,12 +5,14 @@ import {
   voidLastItem,
   processPayment,
   completeOrder,
+  toggleHighPrecisionArithmetic,
 } from "../actions";
 import { AppState } from "../reducers/rootReducer";
 import { TimsRegister } from "../components/TimsRegister";
 
 const mapStateToProps = (state: AppState) => ({
   order: state.order,
+  useHighPrecisionArithmetic: state.arithmetic.useHighPrecisionArithmetic,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -20,6 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       voidLastItem,
       processPayment,
       completeOrder,
+      toggleHighPrecisionArithmetic,
     },
     dispatch
   );

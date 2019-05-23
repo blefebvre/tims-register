@@ -27,6 +27,10 @@ export type RegisterActionTypes =
   | PaymentAction
   | CompleteOrderAction;
 
+export interface ArithmeticActionType {
+  type: typeof types.TOGGLE_HIGH_PRECISION_ARITHMETIC;
+}
+
 export const addItemToCurrentOrder = (item: FoodItem): RegisterActionTypes => {
   return {
     type: types.ADD_ITEM,
@@ -50,5 +54,11 @@ export const processPayment = (cash: number): RegisterActionTypes => {
 export const completeOrder = (): RegisterActionTypes => {
   return {
     type: types.COMPLETE_ORDER,
+  };
+};
+
+export const toggleHighPrecisionArithmetic = (): ArithmeticActionType => {
+  return {
+    type: types.TOGGLE_HIGH_PRECISION_ARITHMETIC,
   };
 };

@@ -24,3 +24,14 @@
   border: 1px solid #ccc;
   padding: 5px;
 }
+
+.arithmetic-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.big-switch {
+  margin-left: 5px;
+}

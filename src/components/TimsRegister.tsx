@@ -1,17 +1,22 @@
 import React, { useState } from "react";
+import Switch from "react-switch";
+
 import { Numpad } from "./Numpad";
 import { FoodItems } from "./FoodItems";
 import { ExtraButtons } from "./ExtraButtons";
-
-import "./TimsRegister.css";
 import { FoodItem } from "../models/FoodItem";
 import OrderDetails from "../containers/OrderDetails";
 import { TimsRegisterContainerProps } from "../containers/TimsRegister";
 import { getFloatFromNumpadString } from "../currency/util";
 import { TotalsRow } from "./TotalsRow";
+import "./TimsRegister.css";
 
 export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
-  const { order } = props;
+  const {
+    order,
+    toggleHighPrecisionArithmetic,
+    useHighPrecisionArithmetic,
+  } = props;
 
   const [numpadValue, setNumpadValue] = useState(0);
   const [numpadString, setNumpadString] = useState("");
@@ -77,6 +82,14 @@ export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
           change={order.change}
           payNow={() => props.processPayment(numpadValue)}
         />
+        <div className="arithmetic-toggle">
+          Use Big.js for arithmetic?
+          <Switch
+            className="big-switch"
+            onChange={toggleHighPrecisionArithmetic}
+            checked={useHighPrecisionArithmetic}
+          />
+        </div>
       </div>
     </>
   );
