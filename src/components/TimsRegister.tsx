@@ -12,11 +12,8 @@ import { TotalsRow } from "./TotalsRow";
 import "./TimsRegister.css";
 
 export const TimsRegister: React.FC<TimsRegisterContainerProps> = (props) => {
-  const {
-    order,
-    toggleHighPrecisionArithmetic,
-    useHighPrecisionArithmetic,
-  } = props;
+  const { order, toggleHighPrecisionArithmetic } = props;
+  const { useHighPrecisionArithmetic } = order;
 
   const [numpadValue, setNumpadValue] = useState(0);
   const [numpadString, setNumpadString] = useState("");

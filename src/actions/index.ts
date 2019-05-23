@@ -21,15 +21,16 @@ export interface CompleteOrderAction {
   type: typeof types.COMPLETE_ORDER;
 }
 
+export interface ArithmeticActionType {
+  type: typeof types.TOGGLE_HIGH_PRECISION_ARITHMETIC;
+}
+
 export type RegisterActionTypes =
   | OrderAction
   | VoidAction
   | PaymentAction
-  | CompleteOrderAction;
-
-export interface ArithmeticActionType {
-  type: typeof types.TOGGLE_HIGH_PRECISION_ARITHMETIC;
-}
+  | CompleteOrderAction
+  | ArithmeticActionType;
 
 export const addItemToCurrentOrder = (item: FoodItem): RegisterActionTypes => {
   return {

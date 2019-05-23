@@ -12,7 +12,6 @@ import { TimsRegister } from "../components/TimsRegister";
 
 const mapStateToProps = (state: AppState) => ({
   order: state.order,
-  useHighPrecisionArithmetic: state.arithmetic.useHighPrecisionArithmetic,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

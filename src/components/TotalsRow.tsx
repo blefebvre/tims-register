@@ -1,4 +1,5 @@
 import React from "react";
+import { Big } from "big.js";
 import { formatCurrency } from "../currency/util";
 import { Button } from "./Button";
 import "./TotalsRow.css";
@@ -15,7 +16,7 @@ export const TotalsRow: React.FC<Props> = ({ total, change, cash, payNow }) => {
     <div className="totals">
       <div id="total">Total: ${formatCurrency(total)}</div>
       <div id="change-due">Change: ${change}</div>
-      <div id="cash">Cash: ${formatCurrency(cash)}</div>
+      <div id="cash">Cash: ${Big(cash).toFixed(2)}</div>
       <div id="pay-now">
         <Button onClick={payNow} className="pay-now-button">
           Pay Now
