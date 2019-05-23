@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && rm -rf gh-pages/static/* gh-pages/precache-manifest.* && cp -r build/* gh-pages/ && pushd gh-pages/ && git pull && git add * && git commit -m 'Deploy' && git push origin gh-pages && popd",
+    "deploy": "npm run build && rm -rf gh-pages/static/* gh-pages/precache-manifest.* && cp -r build/* gh-pages/ && pushd gh-pages/ && git pull && git add * && git add -u && git commit -m 'Deploy' && git push origin gh-pages && popd",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
